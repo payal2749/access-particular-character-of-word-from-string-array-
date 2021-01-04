@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<string> functio(vector<string> inputstr)
+{
+    
+    vector<string> outputstr{};
+    for(int i=0;i<int(inputstr.size());i++)
+    {
+       int flag=1;
+       for(int j=0;j<int(inputstr[i].size());j++)
+       {
+           for(int k=j+1;k<int(inputstr[i].size());k++)
+           {
+              
+              if(inputstr[i][j]>inputstr[i][k])
+              {
+                  flag=0;
+                  break;
+                  
+              }
+           }
+           
+       }
+       if(flag==1)
+          outputstr.push_back("NO");
+       else
+          outputstr.push_back("YES");   
+        
+    }
+    return outputstr;
+}
+
+
+
+int main()
+{
+    vector<string> s;
+    vector <string> str{"bee","superhero","ace"};
+    s=functio(str);
+    for(int i=0;i<int(s.size());i++)
+    {
+       cout<<s[i]<<endl;    
+    }
+    return 0;
+       
+    
+}
